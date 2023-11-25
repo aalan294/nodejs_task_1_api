@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
 const dotenv = require('dotenv').config()
+const cors = require('cors')
 
 const port = process.env.PORT || 3400
 
@@ -18,7 +19,7 @@ const main = async()=>{
     }
 }
 main()
-
+app.use(cors())
 app.use(express.json())
 app.use('/auth',require('./ROUTER/authenticationRouter'))
 app.use('/forget-password',require('./ROUTER/forgetPasswordRouter'))
