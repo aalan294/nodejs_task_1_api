@@ -23,8 +23,8 @@ Run the Application:
   npm start
 
 Endpoints:
-  User Registration: POST /register    #[username,password and email should be passed with the request]
-  User Login: POST /login    #[username and password should be passed with the request]
+  User Registration: POST /auth/register    #[username,password and email should be passed with the request]
+  User Login: POST /auth/login    #[username and password should be passed with the request]
   Forget Password: POST /forget-password    #[body should contain email which the temporary jwt token should be send to and barrier token should also passed with the request]
   Reset Password: POST /reset-password    #[body should contain the email and the new password and there should be the barrier token got from the email which is only valid only for 60 seconds]
 
