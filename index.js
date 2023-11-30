@@ -6,6 +6,8 @@ const cors = require('cors')
 
 const port = process.env.PORT || 3400
 
+//connection to the server
+
 const main = async()=>{
     try {
         app.listen(port,()=>{
