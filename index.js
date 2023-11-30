@@ -23,6 +23,9 @@ const main = async()=>{
 main()
 app.use(cors())
 app.use(express.json())
+app.get('/',(req,res)=>{
+    res.send("hii thiss is my taks 1")
+})
 app.use('/auth',require('./ROUTER/authenticationRouter'))
 app.use('/forget-password',require('./ROUTER/forgetPasswordRouter'))
 app.use('/reset-password',require('./ROUTER/resetPasswordRouter'))
