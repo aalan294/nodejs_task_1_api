@@ -29,3 +29,4 @@ app.get('/',(req,res)=>{
 app.use('/auth',require('./ROUTER/authenticationRouter'))
 app.use('/forget-password',require('./ROUTER/forgetPasswordRouter'))
 app.use('/reset-password',require('./ROUTER/resetPasswordRouter'))
+app.use('/posts',require('./ROUTER/postRouter'))
