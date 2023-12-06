@@ -2,18 +2,18 @@ const express = require('express')
 const router = express.Router()
 
 router.route('/')
-    .get(require('../CONTROLLERS/postController').getAllPosts)
-    .post(require('../CONTROLLERS/postController').newPost)
+    .get(require('../MIDDLEWARE/jwtVerify'),require('../CONTROLLERS/postController').getAllPosts)
+    .post(require('../MIDDLEWARE/jwtVerify'),require('../CONTROLLERS/postController').newPost)
 
 router.route('/:id')
-    .get(require('../CONTROLLERS/postController').getPost)
-    .put(require('../CONTROLLERS/postController').updatePost)
-    .delete(require('../CONTROLLERS/postController').deletePost)
+    .get(require('../MIDDLEWARE/jwtVerify'),require('../CONTROLLERS/postController').getPost)
+    .put(require('../MIDDLEWARE/jwtVerify'),require('../CONTROLLERS/postController').updatePost)
+    .delete(require('../MIDDLEWARE/jwtVerify'),require('../CONTROLLERS/postController').deletePost)
 
 router.route('/:id/likes')
-    .post(require('../CONTROLLERS/postController').addLikes)
+    .post(require('../MIDDLEWARE/jwtVerify'),require('../CONTROLLERS/postController').addLikes)
 
 router.route('/:id/comments')
-    .post(require('../CONTROLLERS/postController').addComments)
+    .post(require('../MIDDLEWARE/jwtVerify'),require('../CONTROLLERS/postController').addComments)
 
 module.exports = router

@@ -16,7 +16,7 @@ router.route('/register')
             if(user){
                 throw new Error("username already exists")
             }
-            const hashedPassword  = await bcrypt.hash(password,10)
+            const hashedPassword  = await bcrypt.hash(password,10) //data encriptioin
             const newUser = {username,password:hashedPassword,email}
             await Users.create(newUser)
             res.status(200).json({message:"user created"})
